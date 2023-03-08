@@ -62,14 +62,16 @@ function Membership() {
             <div className="paypal_button" >
                 <h2>Do you want to buy the membership?</h2>
                 <br></br>
-                <PayPalScriptProvider options = {{"client-id": "AchZDV8No86XQmjElRf51pvC9QwrEtDFC0BN88pnBlyjuJ7XB4qNWQV-Rj8kknca0rn8jc5S9wXlmJVz"}}>
+                <PayPalScriptProvider options = {{"client-id": "AchZDV8No86XQmjElRf51pvC9QwrEtDFC0BN88pnBlyjuJ7XB4qNWQV-Rj8kknca0rn8jc5S9wXlmJVz", "currency": "CAD"}}>
                     <PayPalButtons 
                         createOrder = {(data, actions) => {
                             return actions.order.create(    {
                                 purchase_units: [
                                     {
                                         amount: {
+                                            currency: "CAD",
                                             value: fee,
+                        
                                         },
                                     },
                                 ],
